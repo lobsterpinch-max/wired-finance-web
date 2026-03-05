@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wired Finance | Launching Soon</title>
+    <style>
+        /* Reset & Base */
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        body {
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:2rem;
+            background:linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color:#e2e8f0;
+            overflow-x:hidden;
+        }
+        .wrapper {
+            max-width:1000px;
+            width:100%;
+            text-align:center;
+            position:relative;
+        }
+        /* Floating Card Container */
+        .card {
+            background:rgba(30, 41, 59, 0.5);
+            backdrop-filter:blur(20px);
+            -webkit-backdrop-filter:blur(20px);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:24px;
+            padding:4rem 3rem;
+            box-shadow:0 25px 50px rgba(0,0,0,0.4);
+            position:relative;
+            overflow:hidden;
+            animation:float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform:translateY(0px); }
+            50% { transform:translateY(-10px); }
+        }
+        /* Mobile Optimization */
+        @media (max-width:768px) {
+            body { padding:1rem; }
+            .card { padding:2.5rem 1.5rem; }
+        }
+        /* Brand Logo */
+        .logo {
+            width:80px;
+            height:80px;
+            margin:0 auto 1.5rem;
+            background:linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius:16px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:2.5rem;
+            font-weight:800;
+            color:white;
+            box-shadow:0 8px 20px rgba(59,130,246,0.4);
+            animation:shimmer 3s linear infinite;
+        }
+        @keyframes shimmer {
+            0% { box-shadow:0 0 15px rgba(59,130,246,0.4); }
+            50% { box-shadow:0 0 25px rgba(139,92,246,0.6); }
+            100% { box-shadow:0 0 15px rgba(59,130,246,0.4); }
+        }
+        /* Typography */
+        h1 {
+            font-size:clamp(2rem, 5vw, 3.5rem);
+            font-weight:700;
+            line-height:1.2;
+            margin-bottom:1rem;
+            background:linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+        }
+        .subtitle {
+            font-size:clamp(1.1rem, 2.5vw, 1.5rem);
+            color:#94a3b8;
+            margin-bottom:2.5rem;
+            line-height:1.6;
+        }
+        /* CTA Button */
+        .cta {
+            display:inline-block;
+            background:linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color:white;
+            padding:1.25rem 3rem;
+            font-size:1.25rem;
+            font-weight:600;
+            border:none;
+            border-radius:50px;
+            cursor:pointer;
+            transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:0 10px 30px rgba(59,130,246,0.3);
+            margin:2rem 0;
+            position:relative;
+            overflow:hidden;
+        }
+        .cta:hover {
+            transform:translateY(-4px);
+            box-shadow:0 15px 40px rgba(59,130,246,0.5);
+        }
+        .cta:active { transform:translateY(-1px); }
+        /* Email Form */
+        .email-form {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:1rem;
+            margin:2.5rem auto 0;
+            max-width:500px;
+        }
+        .email-form input {
+            width:100%;
+            padding:1rem 1.5rem;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,0.2);
+            background:rgba(255,255,255,0.05);
+            color:white;
+            font-size:1rem;
+            outline:none;
+            transition:all 0.2s;
+        }
+        .email-form input:focus {
+            border-color:#3b82f6;
+            box-shadow:0 0 0 3px rgba(59,130,246,0.2);
+        }
+        .email-form button {
+            width:100%;
+            padding:1.125rem;
+            border:none;
+            border-radius:12px;
+            background:linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            color:white;
+            font-size:1.125rem;
+            font-weight:600;
+            cursor:pointer;
+            transition:all 0.3s;
+        }
+        .email-form button:hover { transform:translateY(-2px); }
+        /* Countdown */
+        .countdown {
+            display:flex;
+            justify-content:center;
+            gap:2rem;
+            margin-top:3rem;
+            flex-wrap:wrap;
+        }
+        .countdown-item {
+            text-align:center;
+        }
+        .count-value {
+            font-size:clamp(2rem, 6vw, 3.5rem);
+            font-weight:800;
+            color:#3b82f6;
+            line-height:1;
+        }
+        .count-label {
+            font-size:0.875rem;
+            color:#64748b;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            margin-top:0.5rem;
+        }
+        @media (max-width:768px) {
+            .countdown { gap:1rem; }
+        }
+        /* Footer */
+        footer {
+            margin-top:3rem;
+            color:#64748b;
+            font-size:0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="card">
+            <div class="logo">WF</div>
+            <h1>The Era of Financial Efficiency is Here</h1>
+            <p class="subtitle">Wired Finance: Your Financial Efficiency Architect.<br>Professional consultancy. Strategic workshops. AI-driven solutions. Launching Spring 2026.</p>
+            <button class="cta" id="main-cta">Join the Inner Circle</button>
+            <form class="email-form" id="waitlist-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Get Early Access</button>
+            </form>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="count-value" id="days">00</div>
+                    <div class="count-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="count-value" id="hours">00</div>
+                    <div class="count-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="count-value" id="minutes">00</div>
+                    <div class="count-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="count-value" id="seconds">00</div>
+                    <div class="count-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        <footer>© 2026 Wired Finance. All rights reserved.</footer>
+    </div>
+    <script>
+        // Countdown Timer
+        const launchDate = new Date('2026-05-01T00:00:00').getTime();
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<div class="countdown-item"><div class="count-value">LAUNCHED!</div></div>';
+                return;
+            }
+            const days = Math.floor(distance / (1000*60*60*24));
+            const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+            const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+            const seconds = Math.floor((distance % (1000*60)) / 1000);
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        // Form Handler
+        document.getElementById('waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert('Thank you! We\'ll notify you at: ' + email);
+            this.reset();
+        });
+        // CTA Click Handler
+        document.getElementById('main-cta').addEventListener('click', function() {
+            document.querySelector('.email-form input').focus();
+        });
+    </script>
+</body>
+</html>
