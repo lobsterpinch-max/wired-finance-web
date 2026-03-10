@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wired Finance | Launching Soon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wired Finance | Smarter Decisions Start Here</title>
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,140 +12,248 @@
                 extend: {
                     colors: {
                         primary: '#8A9A5B',
-                        accent: '#F97316'
+                        accent: '#F97316',
+                        dark: '#0A0F14'
                     }
                 }
             }
         }
     </script>
     <style>
-        .glass {
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+        body { @apply font-sans antialiased; }
+        .nav-bar { 
+            @apply flex flex-col md:flex-row items-center justify-between bg-white shadow-sm p-2 md:p-4;
         }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        .nav-logo { 
+            @apply text-xl font-bold text-primary;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        .nav-links {
+            @apply flex justify-between items-center;
+        }
+        .nav-nav {
+            @apply flex space-x-4 text-sm;
+        }
+        .navcta {
+            @apply text-sm md:text-lg font-medium px-3 py-1 bg-accent text-white rounded-md hover:bg-accent/80 transition-colors;
+        }
+        .navcta-ghost {
+            @apply text-sm font-medium text-gray-400 hover:text-primary;
+        }
+        .hero {
+            @apply flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-20 text-center px-4;
+        }
+        .hero-cta {
+            @apply bg-accent text-white font-semibold py-2 rounded-lg hover:bg-accent/80;
+        }
+        .hero-sub {
+            @apply text-lg md:text-xl text-gray-200 max-w-2xl mb-4;
+        }
+        .grid-4col {
+            @apply grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 md:mt-12;
+        }
+        .card {
+            @apply bg-white bg-opacity-90 rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow bg-opacity-95;
+        }
+        .card-title {
+            @apply text-lg font-medium text-gray-800;
+        }
+        .card-text {
+            @apply text-sm text-gray-600;
+        }
+        footer {
+            @apply bg-dark-900 text-white py-6 mt-12;
+        }
+        .footer-grid {
+            @apply grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-300;
         }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+<body class="font-sans text-gray-200 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
     <!-- Navigation -->
-    <nav class="glass p-4 fixed w-full top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-xl font-bold text-primary">Wired Finance</div>
-            <a href="#" class="bg-accent text-white px-4 py-2 rounded-lg font-medium hover:bg-accent/80 transition-colors">
-                Join Early Access
-            </a>
+    <nav class="nav-bar">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="nav-logo">Wired Finance</div>
+            <div class="nav-nav">
+                <div class="nav-nav-item">
+                    <div class="navcta-ghost">Home</div>
+                </div>
+                <div class="nav-nav-item group">
+                    <button class="navcta-ghost group-hover:text-primary">Products</button>
+                    <div class="nav-nav-dropdown absolute mt-2 w-48 bg-white rounded shadow-lg ring-1 ring-black opacity-90">
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Sector Research</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Commodity Intelligence</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Crypto & Digital Assets</a>
+                    </div>
+                </div>
+                <div class="nav-nav-item group">
+                    <button class="navcta-ghost group-hover:text-primary">What We Do</button>
+                    <div class="nav-nav-dropdown absolute mt-2 w-48 bg-white rounded shadow-lg ring-1 ring-black opacity-90">
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Our Methodology</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Who We Serve</button>
+                        <div class="nav-nav-dropdown group-hover:relative">
+                            <button class="block text-sm text-gray-600 hover:text-primary">
+                                Who We Serve ▾
+                            </button>
+                            <div class="nav-nav-dropdown absolute mt-1 w-48 bg-white rounded shadow-lg ring-1 ring-black opacity-90">
+                                <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Investors</button>
+                                <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Businesses</button>
+                                <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">HNWI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-nav-item group">
+                    <button class="navcta-ghost group-hover:text-primary">Resources</button>
+                    <div class="nav-nav-dropdown absolute mt-2 w-48 bg-white rounded shadow-lg ring-1 ring-black opacity-90">
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">The Daily Wire</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Flash Notes</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Market Dashboards</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Webinars</button>
+                    </div>
+                </div>
+                <div class="nav-nav-item group">
+                    <button class="navcta-ghost group-hover:text-primary">The Firm</button>
+                    <div class="nav-nav-dropdown absolute mt-2 w-48 bg-white rounded shadow-lg ring-1 ring-black opacity-90">
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">About Us</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Leadership</button>
+                        <a href="#" class="block px-4 py-2 text-base text-gray-800 hover:text-primary">Contact</button>
+                    </div>
+                </div>
+                <div class="nav-nav-item">
+                    <a href="#" class="navcta navcta-ghost">Log In</a>
+                </div>
+                <div class="nav-nav-item">
+                    <a href="#" class="navcta navcta-cta">Request Access</a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-24 pb-16 px-4">
-        <div class="container mx-auto text-center">
-            <div class="glass rounded-2xl p-8 animate-float max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6">
-                    The Era of Financial Efficiency is Here
-                </h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-8">
-                    Strategic consulting and AI-driven workflow optimization for modern businesses.
-                </p>
-                
-                <!-- Email Capture Form -->
-                <form class="max-w-md mx-auto">
-                    <div class="flex gap-4">
-                        <input 
-                            type="email" 
-                            placeholder="Enter your email" 
-                            class="flex-1 px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:border-primary"
-                            required
-                        >
-                        <button 
-                            type="submit" 
-                            class="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent/80 transition-colors"
-                        >
-                            Subscribe
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Value Proposition Grid -->
-    <section class="py-16 px-4">
-        <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1: Strategic Planning -->
-                <div class="glass rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105">
-                    <div class="text-4xl mb-4">📈</div>
-                    <h3 class="text-xl font-semibold text-primary mb-2">Strategic Planning</h3>
-                    <p class="text-gray-300">
-                        Professional financial strategy development and optimization services for businesses of all sizes.
-                    </p>
-                </div>
-
-                <!-- Card 2: Workflow Automation -->
-                <div class="glass rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105">
-                    <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="text-xl font-semibold text-primary mb-2">Workflow Automation</h3>
-                    <p class="text-gray-300">
-                        AI-powered solutions to streamline financial processes and eliminate manual inefficiencies.
-                    </p>
-                </div>
-
-                <!-- Card 3: Financial Efficiency -->
-                <div class="glass rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-semibold text-primary mb-2">Financial Efficiency</h3>
-                    <p class="text-gray-300">
-                        Comprehensive financial health assessments and optimization strategies for sustainable growth.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="py-16 px-4">
-        <div class="container mx-auto text-center">
-            <div class="glass rounded-2xl p-8 max-w-2xl mx-auto">
-                <h2 class="text-3xl font-bold text-primary mb-4">Stay Informed</h2>
-                <p class="text-lg text-gray-200 mb-6">
-                    Get the latest insights on financial efficiency and AI-driven business optimization.
-                </p>
-                <form class="max-w-md mx-auto">
-                    <input 
-                        type="email" 
-                        placeholder="Email address" 
-                        class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:border-primary mb-4"
-                        required
-                    >
-                    <button 
-                        type="submit" 
-                        class="w-full bg-accent text-white py-3 rounded-lg font-semibold hover:bg-accent/80 transition-colors"
-                    >
-                        Subscribe to Newsletter
+    <!-- Hero -->
+    <section class="hero py-20 px-4">
+        <div class="container mx-auto text-center max-w-2xl">
+            <h1 class="text-5xl md:text-7xl font-bold text-primary mb-3">
+                Smarter decisions start with sharper insights.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 mb-6">
+                Buy-side equity research, alternative asset strategies, and tailored portfolio architecture for the modern investor.
+            </p>
+            <form class="max-w-md mx-auto mb-6">
+                <div class="flex">
+                    <input type="email" placeholder="you@domain.com" required
+                        class="flex-1 px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-sm text-gray-900 focus:outline-none focus:border-primary focus:ring-2 focus:ring-accent">
+                    <button type="submit"
+                        class="bg-accent text-white font-semibold py-2 rounded-lg hover:bg-accent/80 transition-colors">
+                        Subscribe
                     </button>
-                </form>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 4-Pillar Grid -->
+    <section class="py-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="card group">
+                <div class="card-content flex flex-col justify-center">
+                    <div class="text-3xl md:text-5xl font-bold text-primary">
+                        📊
+                    </div>
+                    <div class="card-title group-hover:text-accent">
+                        Data & Analytics
+                    </div>
+                    <p class="text-sm text-gray-600 group-hover:text-gray-800 mt-2">
+                        Model portfolios and risk modeling powered by AI.
+                    </p>
+                </div>
             </div>
+
+            <div class="card group">
+                <div class="card-content flex flex-col justify-center">
+                    <div class="text-3xl md:text-5xl font-bold text-primary">
+                        📈
+                    </div>
+                    <div class="card-title group-hover:text-accent">
+                        Research & Macro
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Deep macro analysis and market commentary.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card group">
+                <div class="card-content flex flex-col justify-center">
+                    <div class="text-3xl md:text-5xl font-bold text-primary">
+                        📰
+                    </div>
+                    <div class="card-title group-hover:text-accent">
+                        News & Flash Notes
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Quick macro updates and earnings flashes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card group">
+                <div class="card-content flex flex-col justify-center">
+                    <div class="text-3xl md:text-5xl font-bold text-primary">
+                        🤝
+                    </div>
+                    <div class="card-title group-hover:text-accent">
+                        Advisory Services
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">
+                        Strategic workshops and bespoke portfolio design.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Insights -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h2 class="text-3xl md:text-xl font-bold text-primary mb-4">
+                    Featured Insights
+                </h2>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white bg-opacity-70 p-4 rounded-lg hover:bg-white/20 transition-colors">
+                    <h4 class="text-lg font-medium text-primary mb-1">Alpha Report: AI‑Driven Alpha Signals</h4>
+                    <p class="text-sm text-gray-700">
+                        How machine learning is reshaping alpha generation for hedge funds.
+                    </p>
+                </div>
+                <div class="bg-white bg-opacity-70 p-4 rounded-lg hover:bg-white/20 transition-colors">
+                    <h4 class="text-lg font-medium text-primary mb-1">Weekly Flash Note</h4>
+                    <p class="text-sm text-gray-600">
+                        Quick take on the latest earnings and macro shifts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enroll CTA -->
+    <section class="py-8">
+        <div class="max-w-2xl mx-auto text-center">
+            <a href="#"
+               class="bg-accent text-white font-semibold py-3 rounded-lg py-3 hover:bg-accent/80 px-8">
+                Join Alpha Access
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="glass p-8 mt-16">
-        <div class="container mx-auto text-center">
-            <p class="text-gray-300">
-                © 2026 Wired Finance. All rights reserved.
-            </p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="text-gray-300 hover:text-primary transition-colors">Privacy Policy</a>
-                <a href="#" class="text-gray-300 hover:text-primary transition-colors">Terms of Service</a>
+    <footer class="bg-dark-900 text-white py-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-gray-300">© 2026 Wired Finance. All rights reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="text-sm text-gray-300 hover:text-primary">Privacy Policy</a>
+                <a href="#" class="text-sm text-gray-300 hover:text-primary">Terms of Service</a>
             </div>
         </div>
     </footer>

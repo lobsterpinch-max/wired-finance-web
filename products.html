@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wired Finance | Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8A9A5B',
+                        accent: '#F97316',
+                        dark: '#0A0F14'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card {
+            @apply bg-white bg-opacity-90 rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow bg-opacity-95;
+        }
+        .card-title {
+            @apply text-xl font-semibold text-gray-800 mb-2;
+        }
+        .card-text {
+            @apply text-sm text-gray-600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Minimal nav bar placeholder -->
+    <nav class="bg-white shadow p-4">
+        <div class="container mx-auto flex justify-between">
+            <a href="index.html" class="text-xl font-bold text-primary">Wired Finance</a>
+            <div>
+                <a href="index.html" class="text-sm text-gray-600 hover:text-primary">Home</a>
+                <span class="mx-2 text-gray-400">|</span>
+                <a href="products.html" class="text-sm font-semibold text-primary">Products</a>
+                <span class="mx-2 text-gray-400">|</span>
+                <a href="methodology.html" class="text-sm text-gray-600 hover:text-primary">Methodology</a>
+                <span class="mx-2 text-gray-400">|</span>
+                <a href="resources.html" class="text-sm text-gray-600 hover:text-primary">Resources</a>
+                <span class="mx-2 text-gray-400">|</span>
+                <a href="firm.html" class="text-sm text-gray-600 hover:text-primary">The Firm</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <section class="container mx-auto py-12 px-4">
+        <h1 class="text-2xl font-bold text-primary mb-2">Products</h1>
+        <p class="text-gray-600 mb-6">Our buy-side research, market intelligence, and advisory products.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card">
+                <h3 class="card-title">Sector Research</h3>
+                <p class="card-text">Deep fundamental and quantitative analysis across industry sectors, with AI-enhanced signal discovery.</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Commodity Intelligence</h3>
+                <p class="card-text">Real-time data, supply/demand modeling, and price forecasts for energy, metals, and agriculture.</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Crypto & Digital Assets</h3>
+                <p class="card-text">On-chain metrics, tokenomics analysis, and market structure insights for institutional investors.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center text-sm text-gray-400 py-6">© 2026 Wired Finance</footer>
+</body>
+</html>
