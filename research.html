@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wired Finance | Research Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #8A9A5B;
+            --accent: '#F97316',
+            --text: #3B4261;
+            --background: #F8FAFC';
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #3B4261;
+            line-height: 1.6;
+        }
+        .nav-bar {
+            @apply bg-white shadow-md;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            @apply text-2xl font-bold text-primary;
+        }
+        .nav-links {
+            @apply flex justify-between items-center;
+            gap: 2rem;
+        }
+        .nav-links a {
+            @apply text-gray-700 hover:text-primary transition-colors;
+        }
+        .nav-ghost {
+            @apply text-gray-400 cursor-pointer;
+        }
+        .research-grid {
+            @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            @apply bg-white rounded-lg shadow-md overflow-hidden transition-shadow;
+            @apply hover:shadow-lg;
+        }
+        .card-icon {
+            @apply text-3xl text-accent flex items-center justify-center;
+        }
+        .card-title {
+            @apply text-xl font-semibold mb-2;
+        }
+        .card-text {
+            @apply text-gray-600 mb-4;
+        }
+        .card-cta {
+            @apply bg-accent text-white font-semibold py-2 px-4 rounded-full;
+        }
+        .card-cta:hover {
+            @apply bg-accent/80;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="nav-logo">Wired Finance</div>
+            <div class="nav-links">
+                <a href="#" class="nav-ghost">Home</a>
+                <a href="#" class="nav-ghost">Research</a>
+                <a href="#" class="nav-ghost">Advisory</a>
+                <a href="#" class="nav-ghost">Newsletter</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
+        <div class="container mx-auto text-center py-20">
+            <h1 class="headline">Institutional-Grade Wealth Intelligence</h1>
+            <p class="text-xl md:text-2xl font-medium text-gray-300 mb-8">Buy-side equity research, alternative asset strategies, and tailored portfolio architecture for the modern investor.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3 class="card-title">Equities Research</h3>
+                    <p class="card-text">Deep-dive analysis of public companies and market trends.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">Digital Assets</h3>
+                    <p class="card-text">Crypto and tokenized asset coverage.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">Portfolio Architecture</h3>
+                    <p class="card-text">Tailored investment strategies for long-term growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Terminal -->
+    <section class="research-terminal">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Research Terminal</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <!-- Equities -->
+                <div class="card">
+                    <div class="card-icon">📈</div>
+                    <h3 class="card-title">Equities Research</h3>
+                    <p class="card-text">Deep-dive analysis of public companies and market trends.</p>
+                </div>
+                <!-- Commodities -->
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3 class="card-title">Commodities</h3>
+                    <p class="card-text">Energy, metals, and agricultural insights.</p>
+                </div>
+                <!-- Digital Assets -->
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <h3 class="card-title">Digital Assets</h3>
+                    <p class="card-text">Crypto and tokenized asset coverage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container mx-auto text-center py-6">
+            <p class="text-gray-400">© 2026 Wired Finance. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-primary">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

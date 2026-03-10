@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wired Finance | Wealth Strategy & Workshops</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: '#8A9A5B',
+            --accent: '#F97316',
+            --text: '#3B4261',
+            --background: '#F8FAFC';
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+            color: #3B4261;
+            line-height: 1.6;
+        }
+        .nav-bar {
+            @apply bg-white shadow-md;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            @apply text-2xl font-bold text-primary;
+        }
+        .nav-links {
+            @apply flex justify-between items-center;
+            gap: 2rem;
+        }
+        .nav-links a {
+            @apply text-gray-700 hover:text-primary transition-colors;
+        }
+        .nav-ghost {
+            @apply text-gray-400 cursor-pointer;
+        }
+        .hero { @apply flex flex-col items-center justify-center min-h-screen bg-white py-20; text-center; }
+        .headline { @apply text-4xl md:text-5xl font-bold text-primary mb-4; }
+        .subheadline { @apply text-lg md:text-xl text-gray-600 mb-8; }
+        .cta-btn { @apply bg-accent text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-accent/80; }
+        .service-section { @apply mb-12; }
+        .service-title { @apply text-2xl font-bold text-primary mb-4; }
+        .service-card { @apply bg-white bg-opacity-90 rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow bg-opacity-95 mb-6; }
+        .service-card-title { @apply text-lg font-medium text-gray-800 mb-1; }
+        .service-card-text { @apply text-sm text-gray-500 mb-2; }
+        .service-card-price { @apply text-sm font-semibold text-accent; }
+        footer { @apply text-center text-sm text-gray-500 py-6; }
+    </style>
+</head>
+<body class="font-sans antialiased">
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="nav-logo">Wired Finance</div>
+    <div class="nav-links">
+      <a href="#" class="nav-ghost">Home</a>
+      <a href="#" class="nav-ghost">Research</a>
+      <a href="#" class="nav-ghost">Advisory</a>
+      <a href="#" class="nav-ghost">Newsletter</a>
+      <a href="#" class="nav-ghost">Client Portal</a>
+      <a class="nav-subscribe">Subscribe</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="headline">Wealth Strategy & Workshops</h1>
+      <p class="subheadline">
+        High-ticket advisory services for sophisticated investors and growing businesses.
+      </p>
+    </div>
+  </section>
+
+  <!-- Strategic Workshops -->
+  <section class="service-section max-w-4xl mx-auto px-4">
+    <h2 class="service-title">Strategic Workshops</h2>
+    <div class="service-card">
+      <h3 class="service-card-title">Money & Portfolio Management Mastery</h3>
+      <p class="service-card-text">Comprehensive 2-day workshop covering advanced portfolio construction, asset allocation strategies, and risk management techniques.</p>
+      <p class="service-card-text">• Modern Portfolio Theory implementation</p>
+      <p class="service-card-text">• Behavioral finance & emotional investing</p>
+      <p class="service-card-text">• Tax-efficient investment strategies</p>
+      <p class="service-card-price">Price: $5,000 per workshop</p>
+    </div>
+  </section>
+
+  <!-- Tailored Wealth Thesis -->
+  <section class="service-section max-w-4xl mx-auto px-4">
+    <h2 class="service-title">Tailored Wealth Thesis</h2>
+    <div class="service-card">
+      <h3 class="service-card-title">Bespoke Long-Term Wealth Building</h3>
+      <p class="service-card-text">Personalized wealth strategy development based on individual circumstances, risk tolerance, and financial goals.</p>
+      <p class="service-card-text">• Comprehensive net worth assessment</p>
+      <p class="service-card-text">• Multi-generational wealth planning</p>
+      <p class="service-card-text">• Alternative investment integration</p>
+      <p class="service-card-price">Price: $15,000 for 6-month engagement</p>
+    </div>
+  </section>
+
+  <!-- Model Portfolios -->
+  <section class="service-section max-w-4xl mx-auto px-4">
+    <h2 class="service-title">Model Portfolios</h2>
+    <div class="service-card">
+      <h3 class="service-card-title">Thematic Investment Blueprints</h3>
+      <p class="service-card-text">Pre-built portfolio templates designed to capture specific market opportunities and thematic trends.</p>
+      <p class="service-card-text">• Tech Growth Portfolio (25% annual return target)</p>
+      <p class="service-card-text">• Income Generation Portfolio (8% yield target)</p>
+      <p class="service-card-text">• ESG & Sustainable Portfolio</p>
+      <p class="service-card-price">Price: $2,500 per portfolio template</p>
+    </div>
+  </section>
+
+  <footer class="footer">© 2026 Wired Finance. All rights reserved.</footer>
+</body>
+</html>
