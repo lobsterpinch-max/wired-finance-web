@@ -8,99 +8,152 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script>
 tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: { sans: ['Inter', 'sans-serif'] },
-      colors: {
-        sage: { 800: '#4A5D23', 600: '#8A9A5B', 100: '#E8EBE1' },
-        brandOrange: '#F97316',
-        darkCharcoal: '#111827'
-      }
-    }
-  }
+theme: {
+extend: {
+fontFamily: { sans: ['Inter', 'sans-serif'] },
+colors: {
+wiredTeal: '#64C9CF',
+wiredCream: '#FDE49C',
+wiredGold: '#FFB740',
+wiredRust: '#DF711B',
+darkCharcoal: '#111827'
+}
+}
+}
 }
 </script>
 <style>
 .glass-card {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(229, 231, 235, 0.5);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+background: rgba(255, 255, 255, 0.9);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(229, 231, 235, 0.5);
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+border-color: #DF711B;
+}
+
+/* --- ANIMATION STYLES --- */
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-15px); }
+100% { transform: translateY(0px); }
+}
+@keyframes drawLine {
+from { stroke-dashoffset: 1000; }
+to { stroke-dashoffset: 0; }
+}
+.animate-float {
+animation: float 6s ease-in-out infinite;
+}
+.animated-chart-line {
+stroke-dasharray: 1000;
+stroke-dashoffset: 1000;
+animation: drawLine 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
 <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between h-20 items-center">
-<div class="flex-shrink-0 flex items-center">
-<a href="index.html" class="text-2xl font-bold text-sage-800 tracking-tight">WIRED FINANCE</a>
+<div class="flex justify-between h-24 items-center"> <div class="flex-shrink-0 flex items-center"> <a href="index.html" class="flex items-center">
+<img src="logo.png" alt="Wired Finance Logo" class="h-16 w-auto object-contain"> </a>
 </div>
 <div class="hidden md:flex space-x-8 items-center">
-<a href="products.html" class="text-sm font-semibold text-gray-600 hover:text-sage-600 transition">Products</a>
-<a href="methodology.html" class="text-sm font-semibold text-gray-600 hover:text-sage-600 transition">What We Do</a>
-<a href="resources.html" class="text-sm font-semibold text-gray-600 hover:text-sage-600 transition">Resources</a>
-<a href="firm.html" class="text-sm font-semibold text-gray-600 hover:text-sage-600 transition">The Firm</a>
-</div>
-<div class="hidden md:flex space-x-4 items-center">
-<a href="#" class="text-sm font-semibold text-gray-600 hover:text-sage-600 transition px-3 py-2 border border-transparent hover:border-gray-300 rounded-md">Log In</a>
-<a href="resources.html" class="text-sm font-bold text-white bg-brandOrange hover:bg-orange-600 px-5 py-2.5 rounded-sm transition shadow-sm">Request Access</a>
+<a href="methodology.html" class="text-sm font-semibold text-gray-600 hover:text-wiredRust transition">Our Philosophy</a>
+<a href="products.html" class="text-sm font-semibold text-gray-600 hover:text-wiredRust transition">Research</a>
+<a href="research.html" class="text-sm font-semibold text-gray-600 hover:text-wiredRust transition">Model Portfolios</a>
+<a href="contact.html" class="text-sm font-semibold text-gray-600 hover:text-wiredRust transition">Contact Us</a>
 </div>
 </div>
 </div>
 </nav>
-<section class="relative bg-sage-800 text-white pt-24 pb-32 overflow-hidden">
+
+<section class="relative bg-wiredCream text-darkCharcoal pt-24 pb-32 overflow-hidden">
 <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center md:text-left">
-<h1 class="text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-tight">Smarter decisions start with<br/><span class="text-sage-100">sharper insights.</span></h1>
-<p class="text-xl md:text-2xl text-sage-100 mb-10 max-w-2xl font-light">Institutional-grade buy-side research, alternative asset strategies, and predictive analytics to move decisively.</p>
-<div class="flex flex-col sm:flex-row gap-4 max-w-lg">
-<input type="email" placeholder="Enter your corporate email" class="px-5 py-3 w-full text-gray-900 rounded-sm focus:outline-none focus:ring-2 focus:ring-brandOrange">
-<button class="bg-brandOrange hover:bg-orange-600 text-white font-bold px-8 py-3 rounded-sm transition shadow-lg whitespace-nowrap">Subscribe</button>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+<div class="text-center md:text-left">
+<h1 class="text-4xl md:text-4xl font-bold tracking-tight mb-6 leading-tight">Smarter decisions start with<br/><span class="text-wiredRust">sharper insights.</span></h1>
+
+<p class="text-lg md:text-xl text-gray-700 mb-10 max-w-xl font-light mx-auto md:mx-0">Institutional-grade research and bespoke financial advisory, grounded in uncompromising ethical principles to build wealth that perfectly aligns with your values.</p>
+
+<div class="mt-10">
+<h3 class="font-bold text-darkCharcoal mb-3 text-lg">Get the Weekly Wire</h3>
+<div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto md:mx-0">
+<input type="email" placeholder="Enter your email address" class="px-5 py-3 w-full text-gray-900 rounded-sm focus:outline-none focus:ring-2 focus:ring-wiredRust shadow-sm border border-gray-200">
+<button class="bg-wiredRust hover:opacity-90 text-white font-bold px-8 py-3 rounded-sm transition shadow-lg whitespace-nowrap">Subscribe</button>
 </div>
+</div>
+</div>
+
+<div class="hidden md:block relative animate-float">
+<div class="bg-white/40 backdrop-blur-xl border border-white/60 rounded-2xl p-8 shadow-2xl">
+<div class="absolute -top-4 -left-6 bg-darkCharcoal text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-wiredTeal animate-pulse"></span> Live Alpha
+</div>
+<div class="absolute -bottom-6 -right-4 bg-wiredTeal text-darkCharcoal text-sm font-bold px-5 py-3 rounded-xl shadow-lg border border-white/50">
++24.8% YTD
+</div>
+
+<svg viewBox="0 0 400 250" class="w-full h-auto drop-shadow-xl" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 50H400M0 100H400M0 150H400M0 200H400" stroke="#DF711B" stroke-opacity="0.1" stroke-width="1" stroke-dasharray="4 4"/>
+<rect x="50" y="120" width="8" height="60" rx="4" fill="#64C9CF" fill-opacity="0.4"/>
+<rect x="120" y="150" width="8" height="40" rx="4" fill="#111827" fill-opacity="0.2"/>
+<rect x="190" y="80" width="8" height="90" rx="4" fill="#64C9CF" fill-opacity="0.4"/>
+<rect x="260" y="100" width="8" height="50" rx="4" fill="#111827" fill-opacity="0.2"/>
+<rect x="330" y="40" width="8" height="110" rx="4" fill="#64C9CF" fill-opacity="0.6"/>
+<path class="animated-chart-line" d="M0 200 C 50 200, 70 140, 120 160 C 170 180, 180 90, 230 110 C 280 130, 300 40, 350 60 C 380 70, 390 20, 400 10" stroke="#DF711B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="120" cy="160" r="6" fill="white" stroke="#DF711B" stroke-width="3"/>
+<circle cx="230" cy="110" r="6" fill="white" stroke="#DF711B" stroke-width="3"/>
+<circle cx="350" cy="60" r="6" fill="white" stroke="#DF711B" stroke-width="3"/>
+</svg>
+</div>
+</div>
+
 </div>
 </section>
+
 <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<a href="products.html" class="glass-card p-8 rounded-lg text-left block">
-<div class="w-12 h-12 bg-sage-100 text-sage-800 rounded-full flex items-center justify-center mb-6 text-xl font-bold">1</div>
-<h3 class="text-xl font-bold text-darkCharcoal mb-3">Data & Analytics</h3>
-<p class="text-sm text-gray-600 font-light">Proprietary & predictive data that drives competitive advantage in private and public markets.</p>
-</a>
-<a href="products.html" class="glass-card p-8 rounded-lg text-left block">
-<div class="w-12 h-12 bg-sage-100 text-sage-800 rounded-full flex items-center justify-center mb-6 text-xl font-bold">2</div>
-<h3 class="text-xl font-bold text-darkCharcoal mb-3">Research</h3>
-<p class="text-sm text-gray-600 font-light">Unmatched speed, depth, and clarity. Equities, commodities, and digital asset blueprints.</p>
-</a>
-<a href="resources.html" class="glass-card p-8 rounded-lg text-left block">
-<div class="w-12 h-12 bg-sage-100 text-sage-800 rounded-full flex items-center justify-center mb-6 text-xl font-bold">3</div>
-<h3 class="text-xl font-bold text-darkCharcoal mb-3">News & Flash Notes</h3>
-<p class="text-sm text-gray-600 font-light">Real-time actionable intelligence, earnings reactions, and macro summaries that move markets.</p>
+<a href="research.html" class="glass-card p-8 rounded-lg text-left block">
+<div class="w-12 h-12 bg-wiredCream text-wiredRust rounded-full flex items-center justify-center mb-6 text-xl font-bold">1</div>
+<h3 class="text-xl font-bold text-darkCharcoal mb-3">Investment Research</h3>
+<p class="text-sm text-gray-600 font-light">Institutional-grade market analysis and deep-dive equity coverage, rigorously screened for strong fundamentals and ethical compliance.</p>
 </a>
 <a href="methodology.html" class="glass-card p-8 rounded-lg text-left block">
-<div class="w-12 h-12 bg-sage-100 text-sage-800 rounded-full flex items-center justify-center mb-6 text-xl font-bold">4</div>
-<h3 class="text-xl font-bold text-darkCharcoal mb-3">Advisory Services</h3>
-<p class="text-sm text-gray-600 font-light">Unbiased, institutional-grade strategic workshops focusing on long-term wealth building.</p>
+<div class="w-12 h-12 bg-wiredCream text-wiredRust rounded-full flex items-center justify-center mb-6 text-xl font-bold">2</div>
+<h3 class="text-xl font-bold text-darkCharcoal mb-3">Strategic Advisory</h3>
+<p class="text-sm text-gray-600 font-light">Expert, one-on-one financial guidance designed to navigate market complexities and map out your long-term wealth strategy.</p>
+</a>
+<a href="products.html" class="glass-card p-8 rounded-lg text-left block">
+<div class="w-12 h-12 bg-wiredCream text-wiredRust rounded-full flex items-center justify-center mb-6 text-xl font-bold">3</div>
+<h3 class="text-xl font-bold text-darkCharcoal mb-3">Tailored Portfolios</h3>
+<p class="text-sm text-gray-600 font-light">Bespoke portfolio construction customized from the ground up to match your unique risk profile, financial goals, and personal values.</p>
+</a>
+<a href="#newsletter" class="glass-card p-8 rounded-lg text-left block">
+<div class="w-12 h-12 bg-wiredCream text-wiredRust rounded-full flex items-center justify-center mb-6 text-xl font-bold">4</div>
+<h3 class="text-xl font-bold text-darkCharcoal mb-3">The Weekly Wire</h3>
+<p class="text-sm text-gray-600 font-light">Actionable market intelligence, curated coverage updates, and vital financial news delivered directly to your inbox.</p>
 </a>
 </div>
 </section>
-<footer class="bg-darkCharcoal text-gray-300 py-16 mt-20 border-t border-gray-100">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12">
-<div>
-<h4 class="text-xl font-bold text-white tracking-tight mb-4">WIRED FINANCE</h4>
-<p class="text-sm text-gray-400">Clarity and confidence for the modern investor. Your infrastructure leader for wealth strategy.</p>
+
+<footer class="bg-wiredTeal text-darkCharcoal py-8 mt-16 shadow-inner">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col">
+<div class="w-full space-y-3 text-xs italic opacity-90 text-left">
+<p>DISCLAIMER: WIRED FINANCE provides independent investment research, market commentary, and educational content for informational purposes only. The information provided on this website does not constitute investment advice, financial advice, trading advice, or a recommendation to buy or sell any securities. WIRED FINANCE is not registered as an investment advisor, portfolio manager, or dealer with the Ontario Securities Commission or any other securities regulatory authority. All investments involve risk, including the possible loss of principal. Readers should conduct their own research and consult with a qualified financial professional before making any investment decisions.</p>
 </div>
-<div>
-<h5 class="text-white font-bold mb-4">Get the Daily Wire</h5>
-<input type="email" placeholder="Email Address" class="w-full bg-gray-800 border border-gray-700 text-white px-4 py-2 rounded-sm focus:outline-none focus:border-brandOrange mb-3">
-<button class="w-full bg-brandOrange hover:bg-orange-600 text-white font-bold py-2 rounded-sm transition">Subscribe</button>
+<div class="mt-6 pt-6 border-t border-darkCharcoal/20 w-full text-xs font-bold opacity-75 text-center">
+&copy; 2026 Wired Finance. All rights reserved.
 </div>
 </div>
 </footer>
+
 </body>
 </html>
